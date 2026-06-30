@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suhrobjon & Habibaxon — 18.07.2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- YouTube hidden player (required for music) -->
+  <audio id="bgMusic" loop><source src="music/music.mp3" type="audio/mpeg"></audio>
+
+  <!-- ══════════════ COVER PAGE ══════════════ -->
+  <div class="cover" id="coverPage">
+    <div class="cover-top">SIZGA TAKLIFNOMA KELDI</div>
+    <div class="cover-names">Suhrobjon <span class="amp">&</span> Habibaxon</div>
+    <div class="cover-date-row">
+      <div class="ln"></div>
+      <div class="cover-date-txt">18 · 07 · 2026</div>
+      <div class="ln"></div>
+    </div>
+    <div class="arabic">وَأَلَّفَ بَيْنَ قُلُوبِهِمْ</div>
+    <div class="translation">"U ularning qalblarini birlashtirdi"</div>
+    <div class="surah">AL-ANFOL, 63</div>
+    <div class="heart-icon">♡</div>
+
+    <!-- Unlock slider -->
+    <div class="unlock-wrap" id="unlockWrap">
+      <div class="unlock-fill" id="unlockFill"></div>
+      <div class="unlock-track" id="unlockTrack">OCHISH</div>
+      <div class="unlock-arrow">
+        <i class="ti ti-chevrons-right" style="font-size:14px"></i>
+      </div>
+      <div class="unlock-thumb" id="unlockThumb">
+        <i class="ti ti-lock" id="lockIcon"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ MAIN PAGE ══════════════ -->
+  <div class="main-page" id="mainPage">
+
+    <!-- Language switcher -->
+    <div class="lang-bar">
+      <button class="lang-btn active" onclick="setLang('uz')">UZ</button>
+      <button class="lang-btn" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+
+    <!-- Music bar -->
+    <div class="music-bar">
+      <div class="music-wave" id="mwave">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div>
+        <div class="music-title">♪ TO'Y MUSIQASI</div>
+        <div class="music-sub" id="music-status">BOSING — O'YNATING</div>
+      </div>
+      <button class="music-btn" onclick="toggleMusic()">
+        <i class="ti ti-player-play" id="musicIcon" style="font-size:16px"></i>
+      </button>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <span class="ornament">✦ ✦ ✦</span>
+      <div class="names">
+        Suhrobjon<br>
+        <span class="amp2">&</span><br>
+        Habibaxon
+      </div>
+      <div class="divider-line"><div class="divider-diamond"></div></div>
+      <div class="date-display">18 · 07 · 2026</div>
+    </div>
+
+    <!-- Quran ayat -->
+    <div class="quran-section">
+      <div class="arabic2">وَأَلَّفَ بَيْنَ قُلُوبِهِمْ</div>
+      <div class="translation2" id="quran-tr">«U ularning qalblarini birlashtirdi»</div>
+      <div class="surah2">AL-ANFOL, 63</div>
+    </div>
+
+    <!-- Invite text -->
+    <div class="invite-text" id="invite-text">
+      Aziz mehmonlarimiz,<br>
+      Sizi hayotimizning eng baxtli kuniga —<br>
+      <em style="color:#c8aa64">to'y bazm</em>imizga taklif etamiz.
+    </div>
+
+    <!-- Date & Time -->
+    <div class="section">
+      <span class="section-label" id="lbl-details">TAFSILOTLAR</span>
+      <div class="info-grid">
+        <div class="info-card">
+          <span class="ic-label" id="lbl-date">SANA</span>
+          <div class="ic-value">18.07</div>
+          <div class="ic-sub">2026</div>
+        </div>
+        <div class="info-card">
+          <span class="ic-label" id="lbl-time">VAQT</span>
+          <div class="ic-value">19:00</div>
+          <div class="ic-sub" id="lbl-evening">Kechki ziyofat</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Schedule -->
+    
+
+    <div class="divider-line" style="max-width:200px;margin:0 auto 8px;">
+      <div class="divider-diamond"></div>
+    </div>
+
+    <!-- Venue + Maps -->
+    <div class="venue-section">
+      <span class="section-label" id="lbl-venue-label">MANZIL</span>
+      <div class="venue-name">Yakka Saroy to'yxonasi</div>
+      <div class="venue-address" id="venue-addr">Toshkent shahri</div>
+
+      <!-- Map link buttons -->
+      <div class="map-buttons">
+        <a class="map-btn google" id="google-map-btn" href="#" target="_blank">
+          <i class="ti ti-map-pin"></i>
+          <span id="lbl-google">GOOGLE MAPS</span>
+        </a>
+        <a class="map-btn yandex" id="yandex-map-btn" href="#" target="_blank">
+          <i class="ti ti-map-2"></i>
+          <span id="lbl-yandex">YANDEX MAPS</span>
+        </a>
+      </div>
+
+      <!-- Embedded maps (loaded on unlock) -->
+      <div class="map-embeds">
+        <div class="map-embed-wrap">
+          <span class="map-embed-label" id="lbl-map-google">Google Maps</span>
+          <div id="google-embed-wrap"></div>
+        </div>
+        <div class="map-embed-wrap">
+          <span class="map-embed-label" id="lbl-map-yandex">Yandex Maps</span>
+          <div id="yandex-embed-wrap"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-ornament">
+      <span class="heart2">♡</span>
+      <div class="footer-text" id="footer-text">SIZNING ISHTIROKINIZ — ENG QADRLI SOVG'A</div>
+    </div>
+
+  </div><!-- /main-page -->
+
+  <!-- YouTube IFrame API -->
+  
+  <!-- App logic -->
+  <script src="script.js"></script>
+
+</body>
+</html>
