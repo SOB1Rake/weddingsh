@@ -1,162 +1,238 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uz">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suhrobjon & Habibaxon — 18.07.2026</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suhrobjon & Habibaxon — 18.07.2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Suhrobjon & Habibaxon" />
+    <meta
+      property="og:description"
+      content="Sizni to'yimizga taklif qilamiz 💍 | 18.07.2026"
+    />
+    <meta
+      property="og:image"
+      content="https://suhrobjon-habibaxon.vercel.app/img/yakka.jpg"
+    />
+    <meta property="og:url" content="https://suhrobjon-habibaxon.vercel.app/" />
+    <meta property="og:site_name" content="To'y taklifnomasi" />
+  </head>
+  <body>
+    <!-- YouTube hidden player (required for music) -->
+   
 
-  <!-- YouTube hidden player (required for music) -->
-  <audio id="bgMusic" loop><source src="music/music.mp3" type="audio/mpeg"></audio>
-
-  <!-- ══════════════ COVER PAGE ══════════════ -->
-  <div class="cover" id="coverPage">
-    <div class="cover-top">SIZGA TAKLIFNOMA KELDI</div>
-    <div class="cover-names">Suhrobjon <span class="amp">&</span> Habibaxon</div>
-    <div class="cover-date-row">
-      <div class="ln"></div>
-      <div class="cover-date-txt">18 · 07 · 2026</div>
-      <div class="ln"></div>
-    </div>
-    <div class="arabic">وَأَلَّفَ بَيْنَ قُلُوبِهِمْ</div>
-    <div class="translation">"U ularning qalblarini birlashtirdi"</div>
-    <div class="surah">AL-ANFOL, 63</div>
-    <div class="heart-icon">♡</div>
-
-    <!-- Unlock slider -->
-    <div class="unlock-wrap" id="unlockWrap">
-      <div class="unlock-fill" id="unlockFill"></div>
-      <div class="unlock-track" id="unlockTrack">OCHISH</div>
-      <div class="unlock-arrow">
-        <i class="ti ti-chevrons-right" style="font-size:14px"></i>
+    <!-- ══════════════ COVER PAGE ══════════════ -->
+    <div class="cover" id="coverPage">
+      <div class="cover-top" id="cvr-top">SIZGA TAKLIFNOMA KELDI</div>
+      <div class="cover-names">
+        Suhrobjon <span class="amp">&</span> Habibaxon
       </div>
-      <div class="unlock-thumb" id="unlockThumb">
-        <i class="ti ti-lock" id="lockIcon"></i>
+      <div class="cover-date-row">
+        <div class="ln"></div>
+        <div class="cover-date-txt">18 · 07 · 2026</div>
+        <div class="ln"></div>
       </div>
-    </div>
-  </div>
-
-  <!-- ══════════════ MAIN PAGE ══════════════ -->
-  <div class="main-page" id="mainPage">
-
-    <!-- Language switcher -->
-    <div class="lang-bar">
-      <button class="lang-btn active" onclick="setLang('uz')">UZ</button>
-      <button class="lang-btn" onclick="setLang('ru')">RU</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
-    </div>
-
-    <!-- Music bar -->
-    <div class="music-bar">
-      <div class="music-wave" id="mwave">
-        <span></span><span></span><span></span><span></span>
+      <div class="arabic">وَأَلَّفَ بَيْنَ قُلُوبِهِمْ</div>
+      <div class="translation" id="cvr-translation">
+        "U ularning qalblarini birlashtirdi"
       </div>
-      <div>
-        <div class="music-title">♪ TO'Y MUSIQASI</div>
-        <div class="music-sub" id="music-status">BOSING — O'YNATING</div>
-      </div>
-      <button class="music-btn" onclick="toggleMusic()">
-        <i class="ti ti-player-play" id="musicIcon" style="font-size:16px"></i>
-      </button>
-    </div>
+      <div class="surah">AL-ANFOL, 63</div>
+      <div class="heart-icon">♡</div>
 
-    <!-- Hero -->
-    <div class="hero">
-      <span class="ornament">✦ ✦ ✦</span>
-      <div class="names">
-        Suhrobjon<br>
-        <span class="amp2">&</span><br>
-        Habibaxon
-      </div>
-      <div class="divider-line"><div class="divider-diamond"></div></div>
-      <div class="date-display">18 · 07 · 2026</div>
-    </div>
-
-    <!-- Quran ayat -->
-    <div class="quran-section">
-      <div class="arabic2">وَأَلَّفَ بَيْنَ قُلُوبِهِمْ</div>
-      <div class="translation2" id="quran-tr">«U ularning qalblarini birlashtirdi»</div>
-      <div class="surah2">AL-ANFOL, 63</div>
-    </div>
-
-    <!-- Invite text -->
-    <div class="invite-text" id="invite-text">
-      Aziz mehmonlarimiz,<br>
-      Sizi hayotimizning eng baxtli kuniga —<br>
-      <em style="color:#c8aa64">to'y bazm</em>imizga taklif etamiz.
-    </div>
-
-    <!-- Date & Time -->
-    <div class="section">
-      <span class="section-label" id="lbl-details">TAFSILOTLAR</span>
-      <div class="info-grid">
-        <div class="info-card">
-          <span class="ic-label" id="lbl-date">SANA</span>
-          <div class="ic-value">18.07</div>
-          <div class="ic-sub">2026</div>
+      <!-- Unlock slider -->
+      <div class="unlock-wrap" id="unlockWrap">
+        <div class="unlock-fill" id="unlockFill"></div>
+        <div class="unlock-track" id="unlockTrack">
+          <span id="unlock-label">OCHISH</span>
         </div>
-        <div class="info-card">
-          <span class="ic-label" id="lbl-time">VAQT</span>
-          <div class="ic-value">19:00</div>
-          <div class="ic-sub" id="lbl-evening">Kechki ziyofat</div>
+        <div class="unlock-arrow">
+          <i class="ti ti-chevrons-right" style="font-size: 14px"></i>
+        </div>
+        <div class="unlock-thumb" id="unlockThumb">
+          <i class="ti ti-lock" id="lockIcon"></i>
         </div>
       </div>
     </div>
 
-    <!-- Schedule -->
+    <!-- ══════════════ MAIN PAGE ══════════════ -->
+    <div class="main-page" id="mainPage">
+      <!-- Language switcher -->
+      <div class="lang-bar">
+        <button class="lang-btn active" onclick="setLang('uz')">UZ</button>
+        <button class="lang-btn" onclick="setLang('ru')">RU</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+
+      <!-- Music bar -->
     
 
-    <div class="divider-line" style="max-width:200px;margin:0 auto 8px;">
-      <div class="divider-diamond"></div>
-    </div>
-
-    <!-- Venue + Maps -->
-    <div class="venue-section">
-      <span class="section-label" id="lbl-venue-label">MANZIL</span>
-      <div class="venue-name">Yakka Saroy to'yxonasi</div>
-      <div class="venue-address" id="venue-addr">Toshkent shahri</div>
-
-      <!-- Map link buttons -->
-      <div class="map-buttons">
-        <a class="map-btn google" id="google-map-btn" href="#" target="_blank">
-          <i class="ti ti-map-pin"></i>
-          <span id="lbl-google">GOOGLE MAPS</span>
-        </a>
-        <a class="map-btn yandex" id="yandex-map-btn" href="#" target="_blank">
-          <i class="ti ti-map-2"></i>
-          <span id="lbl-yandex">YANDEX MAPS</span>
-        </a>
+      <!-- Hero -->
+      <div class="hero">
+        <span class="ornament">✦ ✦ ✦</span>
+        <div class="names">
+          Suhrobjon<br />
+          <span class="amp2">&</span><br />
+          Habibaxon
+        </div>
+        <div class="divider-line"><div class="divider-diamond"></div></div>
+        <div class="date-display">18 · 07 · 2026</div>
       </div>
 
-      <!-- Embedded maps (loaded on unlock) -->
-      <div class="map-embeds">
-        <div class="map-embed-wrap">
-          <span class="map-embed-label" id="lbl-map-google">Google Maps</span>
-          <div id="google-embed-wrap"></div>
+      <!-- Quran ayat -->
+      <div class="quran-section">
+        <div class="arabic2">وَأَلَّفَ بَيْنَ قُلُوبِهِمْ</div>
+        <div class="translation2" id="quran-tr">
+          «U ularning qalblarini birlashtirdi»
         </div>
-        <div class="map-embed-wrap">
-          <span class="map-embed-label" id="lbl-map-yandex">Yandex Maps</span>
-          <div id="yandex-embed-wrap"></div>
+        <div class="surah2">AL-ANFOL, 63</div>
+      </div>
+
+      <!-- Invite text -->
+      <div class="invite-text" id="invite-text">
+        Qadrli azizlarimiz! <br />
+        <span style="font-size: 90px">Biz <br /></span>
+        sizlarni to‘yimizga taklif etishdan juda xursandmiz<br />
+      </div>
+
+      <!-- Date & Time -->
+      <div class="section">
+        <span class="section-label" id="lbl-details">TAFSILOTLAR</span>
+        <div class="info-grid">
+          <div class="info-card">
+            <span class="ic-label" id="lbl-date">SANA</span>
+            <div class="ic-value">18.07</div>
+            <div class="ic-sub">2026</div>
+          </div>
+          <div class="info-card">
+            <span class="ic-label" id="lbl-time">VAQT</span>
+            <div class="ic-value">18:00</div>
+            <div class="ic-sub" id="lbl-evening">Kechki ziyofat</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Schedule -->
+      <div class="calendar-section">
+        <!-- COUNTDOWN -->
+        <div class="countdown-section">
+          <span class="countdown-label" id="lbl-countdown">
+            TO'YGACHA QOLGAN VAQT
+          </span>
+
+          <div class="countdown-grid">
+            <div class="cd-block">
+              <span class="cd-num" id="days">00</span>
+              <span class="cd-unit" id="unit-days">KUN</span>
+            </div>
+
+            <div class="cd-sep">:</div>
+
+            <div class="cd-block">
+              <span class="cd-num" id="hours">00</span>
+              <span class="cd-unit" id="unit-hours">SOAT</span>
+            </div>
+
+            <div class="cd-sep">:</div>
+
+            <div class="cd-block">
+              <span class="cd-num" id="minutes">00</span>
+              <span class="cd-unit" id="unit-minutes">DAQIQA</span>
+            </div>
+
+            <div class="cd-sep">:</div>
+
+            <div class="cd-block">
+              <span class="cd-num" id="seconds">00</span>
+              <span class="cd-unit" id="unit-seconds">SONIYA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="calendar-decoration">✦</div>
+
+        <div id="calendar-title" class="calendar-title"></div>
+
+        <div class="calendar-weekdays" id="calendar-weekdays">
+          <div>Du</div>
+          <div>Se</div>
+          <div>Ch</div>
+          <div>Pa</div>
+          <div>Ju</div>
+          <div>Sh</div>
+          <div>Ya</div>
+        </div>
+
+        <div id="calendar-grid" class="calendar-grid"></div>
+      </div>
+
+      <!-- Venue + Maps -->
+      <div class="venue-section">
+        <span class="section-label" id="lbl-venue-label">MANZIL</span>
+        <div class="venue-name" id="venue-name">Yakka Saroy to'yxonasi</div>
+        <div class="venue-address" id="venue-addr">Toshkent shahri</div>
+        <img
+          style="width: 500px; margin-bottom: 20px; border-radius: 15px"
+          src="img/yakka.jpg"
+          alt=""
+        />
+
+        <!-- Map link buttons -->
+        <div class="map-buttons">
+          <a
+            class="map-btn google"
+            id="google-map-btn"
+            href="#"
+            target="_blank"
+          >
+            <i class="ti ti-map-pin"></i>
+            <span id="lbl-google">GOOGLE MAPS</span>
+          </a>
+          <a
+            class="map-btn yandex"
+            id="yandex-map-btn"
+            href="#"
+            target="_blank"
+          >
+            <i class="ti ti-map-2"></i>
+            <span id="lbl-yandex">YANDEX MAPS</span>
+          </a>
+        </div>
+
+        <!-- Embedded maps (loaded on unlock) -->
+        <div class="map-embeds">
+          <div class="map-embed-wrap">
+            <span class="map-embed-label" id="lbl-map-google">Google Maps</span>
+            <div id="google-embed-wrap"></div>
+          </div>
+          <div class="map-embed-wrap">
+            <span class="map-embed-label" id="lbl-map-yandex">Yandex Maps</span>
+            <div id="yandex-embed-wrap"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer-ornament">
+        <div class="footer-bg-text">LOVE</div>
+        <span class="heart2">♡</span>
+        <div class="footer-main-text" id="footer-main">
+          SIZNING ISHTIROKINGIZ
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-sub-text" id="footer-sub">
+          Biz uchun eng muhim sovg'a!
         </div>
       </div>
     </div>
+    <!-- /main-page -->
 
-    <!-- Footer -->
-    <div class="footer-ornament">
-      <span class="heart2">♡</span>
-      <div class="footer-text" id="footer-text">SIZNING ISHTIROKINIZ — ENG QADRLI SOVG'A</div>
-    </div>
-
-  </div><!-- /main-page -->
-
-  <!-- YouTube IFrame API -->
-  
-  <!-- App logic -->
-  <script src="script.js"></script>
-
-</body>
+    <!-- App logic (countdown, calendar, unlock slider, music, til almashtirish) -->
+    <script src="script.js"></script>
+  </body>
 </html>
